@@ -79,6 +79,7 @@ const (
 	optionRunWait      = "RunWait"
 	optionReloadSignal = "ReloadSignal"
 	optionPIDFile      = "PIDFile"
+	optionKillMode     = "KillMode"
 )
 
 // Config provides the setup for a Service. The Name field is required.
@@ -111,6 +112,7 @@ type Config struct {
 	//    - RunWait      func() (wait for SIGNAL) - Do not install signal but wait for this function to return.
 	//    - ReloadSignal string () [USR1, ...] - Signal to send on reaload.
 	//    - PIDFile     string () [/run/prog.pid] - Location of the PID file.
+	//    - KillMode     string () [control-group|process] - Specifies how processes of this service shall be killed.
 	Option KeyValue
 }
 
